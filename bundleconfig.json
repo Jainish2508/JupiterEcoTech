@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "Content/css/Custom.min.css",
+    "inputFiles": [
+      "Content/css/Custom.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/css/style.min.css",
+    "inputFiles": [
+      "Content/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/Custom.min.js",
+    "inputFiles": [
+      "Content/js/Custom.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/main.min.js",
+    "inputFiles": [
+      "Content/js/main.js"
+    ]
+  }
+]

@@ -1,0 +1,75 @@
+﻿@model JupiterEcoTech.Models.EnquiryViewModels
+@{
+    ViewBag.Title = "Enquiry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="bg" class="breadcrumbs">
+        <div class="overlay"></div>
+        <div class="container mt-2">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Enquiry Page</h2>
+                <ol>
+                    <li><a href="@Url.Action("index", "home")">Home</a></li>
+                    <li>Enquiry</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= Contact Section ======= -->
+    <section class="enquiry">
+        <div class="container">
+            <h2 class="text-center">Enquiry Form</h2>
+            <div class="row mt-5 justify-content-center" data-aos="fade-up">
+                <div class="col-lg-10">
+                    @using (Html.BeginForm("", "", FormMethod.Post, new { @class = "email-form", @id = "enquiry" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-row">
+                            <div class="col-md-4 form-group">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "What we will call you?", @id = "name" })
+                                @Html.ValidationMessageFor(m => m.Name)
+                            </div>
+                            <div class="col-md-4 form-group">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Mention your Email address.", @id = "email" })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                            <div class="col-md-4 form-group">
+                                @Html.TextBoxFor(m => m.Contact, new { @class = "form-control", @placeholder = "Mention your contact number.", @id = "phone" })
+                                @Html.ValidationMessageFor(m => m.Contact)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(m => m.Product_Name, Model.Product_Names, "Select a product", new { @class = "form-control productlist", @id = "selectedproduct", @style = "display:block" })
+                            @Html.TextBoxFor(m=>m.Product_Name, new { @class = "form-control customproduct", @placeholder = "Which product you are looking for?", @id = "selectedproduct", @style="display:none" })
+                            @Html.ValidationMessageFor(m => m.Product_Name)
+                        </div>
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.Query, new { @class = "form-control", @placeholder = "We offer upgradation/modification in product you choose.", @cols = 30, @rows = 10, @id = "message" })
+                        </div>
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LfpHbIZAAAAAAIFEz60WJGoU2969Nqqcb05Ozbq"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="submitbtn" type="submit" class="btn btn-primary" value="Send Message" disabled />
+                            <input type="reset" class="btn btn-default" value="Reset" />
+                        </div>
+                        <div id="msgSubmit" class="h3 center hidden"></div>
+                        <div class="clearfix"></div>
+                        <div id="process-loader"></div>
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+<script src='https://www.google.com/recaptcha/api.js'></script>

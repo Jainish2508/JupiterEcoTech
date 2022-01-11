@@ -1,0 +1,38 @@
+/*
+* Remix Icon v2.4.0
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+*
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*
+* Date: 2020-04-20
+*/
+@font-face {
+    font-family: "remixicon";
+    font-display:swap;
+    src: url('https://jupiterecotech.in/Content/vendor/remixicon/remixicon.eot?t=1587359857360'); /* IE9*/
+    src: url('https://jupiterecotech.in/Content/vendor/remixicon/remixicon.eot?t=1587359857360#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url("https://jupiterecotech.in/Content/vendor/remixicon/remixicon.woff2?t=1587359857360") format("woff2"), url("https://jupiterecotech.in/Content/vendor/remixicon/remixicon.woff?t=1587359857360") format("woff"), url('https://jupiterecotech.in/Content/vendor/remixicon/remixicon.ttf?t=1587359857360') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('https://jupiterecotech.in/Content/vendor/remixicon/remixicon.svg?t=1587359857360#remixicon') format('svg'); /* iOS 4.1- */
+    font-display: swap;
+}
+
+[class^="ri-"] {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ri-check-double-line:before {
+    content: "\eb73";
+}
+
+.ri-facebook-fill:before {
+    content: "\ec9c";
+}
+
+.ri-google-fill:before {
+    content: "\edad";
+}

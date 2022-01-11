@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "About Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="bg" class="breadcrumbs">
+    <div class="overlay"></div>
+        <div class="container mt-2">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>About Us</h2>
+                <ol>
+                    <li><a href="@Url.Action("index", "home")">Home</a></li>
+                    <li>About Us</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row content">
+                <div class="col-lg-6 mt-5" data-aos="fade-right">
+                    <img src="~/Content/img/about-us-banner.svg" alt="About Us" class="img-fluid" />
+                    @*<h3 class="mt-3">Jupiter EcoTech has come a long way from its beginnings in Ahmedabad.</h3>*@
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+
+                    <p>
+                        <span class="firstcharacter">W</span>elcome to Jupiter EcoTech, your No. 1 source for all types of Refurbished and New Computers. We are dedicated to providing the best quality Refurbished Laptop and Desktop similar to newin the most affordable price. Our focus is not only to provide best quality Computers also to provide you services on priority basis once you become our valuable customer after purchasing any product.We are serving to our customer for 9 years in Ahmedabad due to our quality service our customers love to refer our service and products us to their known ones. Currently, we are serving more than 5000 customers we have 4.8rating in Google.
+
+                    </p>
+                    <p>
+                        Jupiter EcoTech can offer you best quality of product in competitive price. We now serve customers all over country, and are thrilled that we're able to turn our passion into our own website.
+                    </p>
+                    <p>
+                        We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Us Section -->
+    <!--Why Choose us section-->
+
+    <section id="choose" class="choose section-bg">
+        <div class="container" data-aos="fade-left">
+            <div class="section-title">
+                <h2>Why to choose us? </h2>
+                <p>
+                    There are multiple reasons to consider our services, some of them are mentioned
+                    below:
+                </p>
+                <span class="custom-border"></span>
+            </div>
+
+            <div class="row content">
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-right">
+                    <ul>
+                        <li><i class="ri-check-double-line"></i>Top Quality fully maintained Laptop, Desktop and Servers</li>
+                        <li><i class="ri-check-double-line"></i>Experts always ready for service</li>
+                        <li><i class="ri-check-double-line"></i>Most affordable Price</li>
+                        <li><i class="ri-check-double-line"></i>Systems similar to New condition</li>
+                        <li><i class="ri-check-double-line"></i>100% Satisfaction Guarantee</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <img src="~/Content/img/why-us-banner-image.png" alt="Why to choose us?" class="img-fluid mt-2" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--End of why choose us section-->
+    <!-- ======= Our Skills Section ======= -->
+    <section id="skills" class="skills">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our <strong>Expertise</strong></h2>
+            </div>
+
+            <div class="row skills-content">
+                @{
+                    Random ran = new Random();
+                    string[] expertise = { "Customer Satisfaction", "Quality of Product", "Problem solving", "Communication" };
+                    foreach (string expt in expertise)
+                    {
+                        var num = ran.Next(70, 95);
+                        <div class="col-lg-6" data-aos="fade-up">
+                            <div class="progress">
+                                <span class="skill">@expt<i class="val">@num%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="@num" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section><!-- End Our Skills Section -->
+</main><!-- End #main -->

@@ -1,0 +1,248 @@
+﻿@model IEnumerable<JupiterEcoTech.Models.HomeViewModels>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="home">
+    <div class="home_slider_container">
+
+        <div class="owl-carousel owl-theme home_slider">
+
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background mt-3" style="background-image: url(Content/img/slide/slider1.png)">
+                </div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_slider_content" data-animation-in="fadeIn"
+                                     data-animation-out="animate-out fadeOut">
+                                    <div class="home_slider_title">Looking for the best quality <spna class="green">Laptops</spna>?</div>
+                                    <div class="home_slider_subtitle">
+                                        Office, Education or Gaming purpose laptops at very reasonable price with best quality and service with customization.
+                                    </div>
+                                    <div class="button button_light home_button"><a href="@Url.Action("laptop","products")">Shop Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image: url(Content/img/slide/slider2.png)">
+                </div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_slider_content" data-animation-in="fadeIn"
+                                     data-animation-out="animate-out fadeOut">
+                                    <div class="home_slider_title">Organize your office work with <spna class="green">Desktops</spna>.</div>
+                                    <div class="home_slider_subtitle">
+                                        System with sufficient required RAM, Hard-drive, High Graphics and Processor. We also do customization as per your requirements.
+                                    </div>
+                                    <div class="button button_light home_button"><a href="@Url.Action("desktop","products")">Shop Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image:url(Content/img/slide/slider3.png)">
+                </div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_slider_content" data-animation-in="fadeIn"
+                                     data-animation-out="animate-out fadeOut">
+                                    <div class="home_slider_title">Grow your business with private <spna class="green">Servers</spna>.</div>
+                                    <div class="home_slider_subtitle">
+                                        We have high end servers which is more suitable to run small,medium and big business online without major interruption. For more information, please write to us.
+                                    </div>
+                                    <div class="button button_light home_button"><a href="@Url.Action("index","contact")">Shop Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home_slider_dots_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_dots">
+                            <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                <li class="home_slider_custom_dot active">01.</li>
+                                <li class="home_slider_custom_dot">02.</li>
+                                <li class="home_slider_custom_dot">03.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="main">
+
+    @*======= About Us Section =======*@
+    <section id="about-us" class="about-us">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Who we are?</h2>
+            </div>
+
+            <div class="row content">
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <img src="~/Content/img/Banner1.jpg" class="img-fluid mt-4" />
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+                    <h3>Best quality is our first priority</h3>
+                    <p class="text-justify">
+                        Welcome to Jupiter EcoTech, your No. 1 source for all types of Refurbished and New Computers. We are dedicated
+                        to providing the best quality Refurbished Laptop and Desktop similar to new in the most affordable price. Our focus is
+                        not only to provide best quality Computers also to provide you services on priority basis once you become our
+                        valuable customer after purchasing any product. We are serving to our customer for 9 years in Ahmedabad due to
+                        our quality service our customers love to refer our service and products us to their known ones. Currently, we are
+                        serving more than 5000 customers we have 4.8 rating in Google.
+                    </p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i>Top quality fully maintained equipment</li>
+                        <li><i class="ri-check-double-line"></i>Exceptional Service</li>
+                        <li><i class="ri-check-double-line"></i>Extremely competitive price</li>
+                    </ul>
+                    <p class="text-justify">
+                        Our entire staff is expertly trained on all our equipment and knows what has to be done to support it.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section> @*End About Us Section*@
+
+    <!--Why Choose us section-->
+
+    <section id="choose" class="choose section-bg">
+        <div class="container" data-aos="fade-left">
+            <div class="section-title">
+                <h2>Why to choose us? </h2>
+                <p>
+                    There are multiple reasons to consider our services, some of them are mentioned
+                    below:
+                </p>
+                <span class="custom-border"></span>
+            </div>
+
+            <div class="row content">
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-right">
+                    <ul>
+                        <li><i class="ri-check-double-line"></i>Top Quality fully maintained Laptop, Desktop and Servers</li>
+                        <li><i class="ri-check-double-line"></i>Experts always ready for service</li>
+                        <li><i class="ri-check-double-line"></i>Most affordable Price</li>
+                        <li><i class="ri-check-double-line"></i>Systems similar to New condition</li>
+                        <li><i class="ri-check-double-line"></i>100% Satisfaction Guarantee</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <img src="~/Content/img/why-us-banner-image.png" alt="Why to choose us?" class="img-fluid" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--End of why choose us section-->
+    @*======= Services Section =======*@
+    <section id="services" class="services section-bg" style="padding-bottom:2em;">
+        <div class="container" data-aos="fade-up" style="padding-bottom:2em;">
+
+            <div class="section-title">
+                <h2>Shop by category</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="Content/img/shop01.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Laptop<br>Collection</h3>
+                            <a href="@Url.Action("laptop","products")" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="Content/img/shop02.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Desktop<br>Collection</h3>
+                            <a href="@Url.Action("desktop","products")" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="Content/img/shop03.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>All in One<br>Collection</h3>
+                            <a href="@Url.Action("allinone","products")" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Products You Migth Like</h2>
+            </div>
+
+            <div class="row">
+                    @{
+
+                        foreach (var item in Model)
+                        {
+                            string alter = item.ProductFile.ToString().Replace(".jpg", "").Replace(".png", "");
+                            string name = item.ProductName.ToLower().Replace(" ", "-");
+                            int delay = 100;
+
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="@delay">
+                                <div class="icon-box iconbox-blue">
+                                    <img src="~/Content/img/Products/@item.ProductFile" alt="@alter" class="img-fluid product-image mb-4" />
+                                    <div class="mt-4">
+                                        <h5>@item.ProductName</h5>
+
+                                        <a href="@Url.Action("details", "products", new { id = name })" class="btn btn-custom" id="@item.ProductName">View Product</a>
+                                    </div>
+                                </div>
+                            </div>
+                            delay += 100;
+                        }
+                    }
+
+                </div>
+
+        </div>
+    </section> @*End Services Section*@
+</main>

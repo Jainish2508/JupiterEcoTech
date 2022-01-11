@@ -1,0 +1,79 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<JupiterEcoTech.Models.Product>
+
+@{
+    ViewBag.Title = "All In One";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="bg" class="breadcrumbs">
+        <div class="overlay"></div>
+        <div class="container mt-2">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>All in One</h2>
+                <ol>
+                    <li><a href="@Url.Action("index", "home")">Home</a></li>
+                    <li><a href="@Url.Action("index","products")">Products</a></li>
+                    <li>All in One</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= products Section ======= -->
+    <section id="products" class="products">
+        <div class="container">
+            @{
+                if (Model.Count == 0)
+                {
+                    <div class="text-center" data--aos="fade-up">
+                        <div class="justify-content-center">
+                            <h4>Sorry, We don't have these products available yet. <br />Kindly leave us a message with your requirements.</h4>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row" data-aos="fade-up">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <ul id="products-flters">
+                                <li data-filter="*" class="filter-active">All</li>
+                                <li data-filter=".filter-HP">HP</li>
+                                <li data-filter=".filter-Lenovo">Lenovo</li>
+                                <li data-filter=".filter-Dell">Dell</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row products-container" data-aos="fade-up">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            string alter = Model[i].ProductFile.ToString().Replace(".jpg", "").Replace(".png", "");
+                            string name = Model[i].ProductName.ToLower().Replace(" ", "-");
+
+                            <div class="col-lg-4 col-md-6 products-item filter-@Model[i].ProductBrand">
+                                <a href="@Url.Action("details", "products", new { id = name })">
+                                    <img src="~/Content/img/Products/@Model[i].ProductFile" class="img-fluid product-image" alt="@alter">
+                                    <div class="products-info">
+                                        <h4>@Html.DisplayFor(p => p[i].ProductName, new { @id = "Name_" + i })</h4>
+                                        <p>@Html.DisplayFor(p => p[i].ProductBrand, new { @id = "Brand_" + i })</p>
+                                        @*<a href="~/Content/img/Products/@Model[i].ProductFile" data-gall="productsGallery" class="venobox preview-link" title="@Model[i].ProductName "><i class="bx bx-plus"></i></a>
+                                            <a href="@Url.Action("details", "products", new { id = name })" class="details-link" title="More Details"><i class="bx bx-link"></i></a>*@
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                }
+                <div class="pagination text-center" style="margin-left: 400px">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                </div>
+            }
+        </div>
+    </section><!-- End products Section -->
+
+</main><!-- End #main -->

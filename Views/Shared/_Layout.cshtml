@@ -1,0 +1,146 @@
+﻿@{
+    Html.RenderPartial("GoogleAnalytics");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Jupiter EcoTech</title>
+    <meta content="Jupiter EcoTech can offer you best quality of product in competitive price. We now serve customers all over country, and are thrilled that we're able to turn our passion into our own website." name="description" />
+    <meta content="laptop accessories,computer accessories,brand new pc in ahmedabad,brand new laptop in ahmedabad,brand new laptop in india, brand new computer in india,brand new computers in india,refurbished computers in india,refurbished computer in india,refurbished pc in india,hp refurbished desktop india,refurbished computer online india,refurbished computer in ahmedabad,refurbished computer near me,refurbished computer india,refurbished computer monitors,refurbished computer cpu,refurbished computer accessories,refurbished computer all in one,buying a refurbished computer,Jupiter EcoTech,JupiterEcoTech,jupiterecoTech,jupiter ecoTech" name="keywords" />
+
+    @Styles.Render("~/Content/vendorcss")
+    @Styles.Render("~/Content/maincss")
+
+    <link href="~/favicon.ico" rel="icon" />
+    <link href="" rel="apple-touch-icon" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap">
+
+</head>
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+            <a href="@Url.Action("index", "home")" class="logo mr-auto"><img src="~/Content/img/jupiterecotech-1.png" alt="Jupiter EcoTech" class="img-fluid"></a>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    @{
+                        string pageUrl = Request.Url.PathAndQuery.ToString();
+                    }
+                    <li class="@(pageUrl.ToLower().EndsWith("/home") || pageUrl.ToLower().EndsWith("/") ? "active" : string.Empty)"><a href="@Url.Action("index", "home")">Home</a></li>
+
+                    <li class="@(pageUrl.ToLower().EndsWith("/about") ? "active" : string.Empty)"><a href="@Url.Action("index", "about")">About Us</a></li>
+
+                    <li class="@(pageUrl.ToLower().EndsWith("/products") || pageUrl.ToLower().EndsWith("/laptop") || pageUrl.ToLower().EndsWith("/desktop") || pageUrl.ToLower().EndsWith("/all-in-one") || pageUrl.ToLower().Contains("/products") ? "active" : string.Empty) drop-down">
+                        <a href="@Url.Action("index", "products")">Products</a>
+                        <ul>
+                            <li><a href="@Url.Action("laptop", "products")">Laptop</a></li>
+                            <li><a href="@Url.Action("desktop", "products")">Desktop</a></li>
+                            <li><a href="@Url.Action("allinone", "products")">All In One (PCs)</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="@(pageUrl.ToLower().EndsWith("/enquiry") ? "active" : string.Empty)"><a href="@Url.Action("index", "enquiry")">Enquiry</a></li>
+
+                    <li class="@(pageUrl.ToLower().EndsWith("/contact") ? "active" : string.Empty)"><a href="@Url.Action("index", "contact")">Contact</a></li>
+
+                </ul>
+
+            </nav><!-- .nav-menu -->
+
+            <div class="header-social-links">
+                <a href="https://g.co/kgs/6q4b1h" class="google"><i class="ri-google-fill"></i></a>
+                <a href="https://www.facebook.com/jupiterecotech/" class="facebook"><i class="ri-facebook-fill"></i></a>
+
+            </div>
+
+        </div>
+    </header>
+    <div style="padding-top:1em">
+        @RenderBody()
+        <!--Testimonials Section-->
+        <section id="custom-testimonials" class="section-white-bg">
+            <div class="container-fluid" data-aos="zoom-in">
+                <div class="section-title">
+                    <h2>A words from our customers</h2>
+                </div>
+                <div class="row content">
+                    <div id="testimonials1"></div>
+                </div>
+            </div>
+        </section>
+        <!--End of Testimonials Section-->
+
+    </div>
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact" style="padding-top:20px;">
+                        <a href="@Url.Action("index", "home")" class="logo mr-auto"><img src="~/Content/img/jupiterecotech-1.png" alt="Jupiter EcoTech" class="img-fluid"></a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Details</h4>
+                        <p>
+                            02-Ashapuri Flat, Sterling Cross Road,<br>
+                            Behind Gwalia Sweet, Gurukul Road,<br>
+                            Memnagar, Ahmedabad, Gujarat-380052 <br><br>
+
+                        </p>
+                        <p>
+                            Phone: <a href="tel:+91 9974663464"> +91-997 466 3464</a><br>
+                            Email: <a href="mailto:info@jupiterecotech.in">info@jupiterecotech.in</a><br>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("index", "home")">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("index", "about")">About Us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("index", "products")">Products</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("index", "enquiry")">Enquiry</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("index", "contact")">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>More Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("laptop", "products")">Laptops</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("desktop", "products")">Desktop</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("allinone", "products")">All in One (Pc)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="mr-md-auto text-center text-md-left">
+                <div class="copyright">
+                    &copy; 2020 <strong><span><a href="@Url.Action("index", "home")"> Jupiter Eco-Tech</a></span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Developed by Jainish Shah
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="https://g.co/kgs/6q4b1h" class="google"><i class="ri-google-fill"></i></a>
+                <a href="https://www.facebook.com/jupiterecotech/" class="facebook"><i class="ri-facebook-fill"></i></a>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/vendorjs")
+    @Scripts.Render("~/Content/mainjs")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
